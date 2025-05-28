@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icono.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">FARMACIAS</div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                <li><a href="{{ url_for('login') }}">Iniciar Sesión</a></li>
+                <li><a href="{{ url_for('register') }}">Registro</a></li>
+                <li><a href="{{ url_for('products') }}">Productos</a></li>
+                <li><a href="{{ url_for('cart') }}">Carrito</a></li>
+                <li><a href="{{ url_for('contact') }}">Contacto</a></li>
+            </ul>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cart" class="cart-section">
+            <h2>Tu carrito</h2>
+            <div class="cart-items">
+                <!-- Aquí aparecen los productos que hemos seleccionado en el apartado productos-->
+            </div>
+            <div class="cart-total">
+                <h3>Total: <span id="total-amount">0€</span></h3>
+                <button id="checkout-button">Realizar Compra</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Farmacias. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartContainer = document.querySelector('.cart-items');
+            const totalAmount = document.getElementById('total-amount');
+
+            function updateCart() {
+                cartContainer.innerHTML = '';
+                let total = 0;
+                cartItems.forEach((item, index) => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `
+                        <p>${item.name}</p>
+                        <p>${item.price}€</p>
+                        <button onclick="removeFromCart(${index})">Eliminar</button>
+                    `;
+                    cartContainer.appendChild(itemElement);
+                    total += item.price;
+                });
+                totalAmount.textContent = total.toFixed(2) + '€';
+            }
+
+            window.removeFromCart = function(index) {
+                cartItems.splice(index, 1);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCart();
+            };
+
+            updateCart();
+
+            document.getElementById('checkout-button').addEventListener('click', function() {
+                alert('Compra realizada con éxito!');
+                localStorage.removeItem('cartItems');
+                cartItems = [];
+                updateCart();
+            });
+        });
+    </script>
+</body>
+</html>
