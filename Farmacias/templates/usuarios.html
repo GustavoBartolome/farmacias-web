@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios registrados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icono.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Usuarios registrados</h1>
+        <a href="{{ url_for('home') }}">Volver al inicio</a>
+    </header>
+
+    <main>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Contraseña</th>
+                    <th>DNI</th>
+                    <th>NAF</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario[0] }}</td> <!-- id -->
+                    <td>{{ usuario[1] }}</td> <!-- nombre -->
+                    <td>{{ usuario[2] }}</td> <!-- correo -->
+                    <td>{{ usuario[3] }}</td> <!-- contraseña -->
+                    <td>{{ usuario[4] }}</td> <!-- dni -->
+                    <td>{{ usuario[5] }}</td> <!-- naf -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='icono.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        
+        {% if session.get('usuario') %}
+            <p>Bienvenido, {{ session['usuario'] }} | <a href="{{ url_for('logout') }}">Cerrar sesión</a></p>
+        {% endif %}
+
+        <nav class="navbar">
+            <div class="logo">FARMACIAS</div>
+           <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                <li><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+                <li><a href="{{ url_for('register') }}">Registro</a></li>
+                <li><a href="{{ url_for('products') }}">Productos</a></li>
+                <li><a href="{{ url_for('cart') }}">Carrito</a></li>
+                <li><a href="{{ url_for('contact') }}">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="register-section">
+            <h2>Registrarse</h2>
+            <form method="post" action="/register">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="form-group">
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" name="dni" pattern="^\d{8}[A-Za-z]$" title="Debe introducir un DNI válido" required>
+                </div>
+                <div class="form-group">
+                    <label for="naf">Número de seguridad social:</label>
+                    <input type="text" id="naf" name="naf" pattern="^\d{12}$" title="Debe introducir un nºSS válido"  required>
+                </div>
+                <div class="form-group">
+                    <label for="Sexo">Sexo:</label>
+                    <select id="sexo" name="sexo" required>
+                        <option value="">-- Seleccione --</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="Edad" name="edad" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Registrarse</button>
+                </div>
+            </form>
+            <p><a href="{{ url_for('home') }}">Volver la página principal</a></p>
+
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Farmacias. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para el menú móvil -->
+    <script src="./scripts.js"></script>
+
+</body>
+</html>
+
