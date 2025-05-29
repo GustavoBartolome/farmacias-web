@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmacias - Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='icono.ico') }}" type="image/x-icon">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">FARMACIAS</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Inicio</a></li>
+            <li><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+            <li><a href="{{ url_for('register') }}">Registro</a></li>
+            <li><a href="{{ url_for('products') }}">Productos</a></li>
+            <li><a href="{{ url_for('cart') }}">Carrito</a></li>
+            <li><a href="{{ url_for('contact') }}">Contacto</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+</header>
+
+
+    <main>
+        <section id="home" class="home-section">
+            <h2>Bienvenido a nuestra farmacia</h2>
+        </section>
+        <section class="map-section">
+            <!-- Mapa a la izquierda -->
+            <div id="map-container">
+                <h2>Mapa</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24183.14223463498!2d-3.7037902!3d40.4167754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228c1f4b0b0b1%3A0x1c1b1e1e1e1e1e1e!2sMadrid!5e0!3m2!1ses!2ses!4v1620221234567!5m2!1ses!2ses"
+                    width="100%"
+                    height="700"
+                    style="border:0;"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Listado de farmacias a la derecha -->
+            <aside id="farmacia-lista">
+                <h2>Listado farmacias en Madrid</h2>
+                <input type="text" id="search-bar" class="search-bar" placeholder="Buscar farmacias...">
+                {% include 'farmacias_madrid.html' %}
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Farmacias. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+    // Script de búsqueda
+          document.getElementById('search-bar').addEventListener('input', function () {
+            const searchTerm = this.value.toLowerCase();
+            const farmacias = document.querySelectorAll('.farmacia');
+            farmacias.forEach(farmacia => {
+                const text = farmacia.textContent.toLowerCase();
+                farmacia.style.display = text.includes(searchTerm) ? 'block' : 'none';
+        });
+    });
+
+            // Script para actualizar el mapa embebido
+            document.querySelectorAll('.ver-en-mapa').forEach(enlace => {
+                enlace.addEventListener('click', function (e) {
+                    e.preventDefault();
+            const lat = this.getAttribute('data-lat');
+            const lng = this.getAttribute('data-lng');
+            const iframe = document.querySelector('#map-container iframe');
+            iframe.src = `https://www.google.com/maps?q=${lat},${lng}&output=embed`;
+        });
+    });
+        </script>
+</main>
+
+    <footer>
+        <p>&copy; 2025 Farmacias. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para el menú móvil -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
+
+

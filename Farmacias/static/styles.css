@@ -1,0 +1,609 @@
+
+/* styles.css */
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+/* Encabezado y navegación */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+}
+
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #45a049;
+}
+
+/* Sección de inicio de sesión */
+.login-section {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-section h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #45a049;
+}
+
+.form-group a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.form-group a:hover {
+    text-decoration: underline;
+}
+
+.form-group p {
+    text-align: center;
+    color: #333;
+}
+
+/* Sección de productos */
+.product-page {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-page h2 {
+    text-align: center;
+    color: #333;
+
+}
+
+.product-page p {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+.home-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.home-section h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.home-section p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.home-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-buttons button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-buttons button:hover {
+    background-color: #45a049;
+}
+
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+
+/* Sección de registro */
+.register-section {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-section h2 {
+    text-align: center;
+    color: #333;
+}
+
+.register-section .form-group {
+    margin-bottom: 1rem;
+}
+
+.register-section .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.register-section .form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.register-section .form-group button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-section .form-group button:hover {
+    background-color: #45a049;
+}
+
+.register-section .form-group a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.register-section .form-group a:hover {
+    text-decoration: underline;
+}
+
+.register-section .form-group p {
+    text-align: center;
+    color: #333;
+}
+
+/* Sección de contacto */
+.contact-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+    text-align: center;
+    color: #333;
+}
+
+.contact-section .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-section .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.contact-section .form-group input,
+.contact-section .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-section .form-group textarea {
+    resize: vertical;
+}
+
+.contact-section .form-group button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-section .form-group button:hover {
+    background-color: #45a049;
+}
+
+.contact-section .form-group a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.contact-section .form-group a:hover {
+    text-decoration: underline;
+}
+
+.contact-section .form-group p {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #4CAF50;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar .nav-links li {
+    margin: 0;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #45a049;
+}
+
+/* Sección del mapa y listado de farmacias */
+.map-section {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#map-container,
+#farmacia-lista {
+    width: 50%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(227, 35, 35, 0.1);
+    box-sizing: border-box;
+}
+
+#farmacia-lista {
+    overflow-y: auto;
+    max-height: 800px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Pie de página */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.flash-message {
+    background-color: #e0ffe0;
+    border: 1px solid #00aa00;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #006600;
+    border-radius: 5px;
+}
+.forgot-password-section {
+    max-width: 350px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.forgot-password-section h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.forgot-password-section .form-group {
+    margin-bottom: 1rem;
+}
+
+.forgot-password-section .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.forgot-password-section .form-group input {
+    width: 90%;
+    padding: 0.4rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.forgot-password-section .form-group button {
+    width: 90%;
+    padding: 0.4rem;
+    font-size: 0.9rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.forgot-password-section .form-group button:hover {
+    background-color: #45a049;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.tab-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #45a049;
+}
+
+.centered-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+.tab-content {
+    text-align: center;
+}
+
+.tab-content .product {
+    display: inline-block;
+    width: 200px;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.cart-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cart-items {
+    margin-bottom: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+.cart-item p {
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+.cart-item button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-item button:hover {
+    background-color: #c0392b;
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+#checkout-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#checkout-button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+
+    .nav-links a {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+        display: none;
+ 
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .map-section {
+        flex-direction: column;
+    }
+
+    #map-container,
+    #farmacia-lista {
+        width: 100%;
+    }
+}
+}
